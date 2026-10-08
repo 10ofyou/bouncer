@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Bouncer",
+  "version": "1.0.0",
+  "description": "Blocks the email and password boxes on fake sign-in pages that pretend to be a big brand on the wrong domain.",
+  "permissions": ["storage"],
+  "background": { "service_worker": "src/background.js" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/brands.js", "src/matcher.js", "src/content.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "action": {
+    "default_title": "Bouncer",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png" }
+  },
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'none'"
+  }
+}

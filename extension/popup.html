@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bouncer</title>
+<style>
+  body { font: 13px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 14px; width: 300px; color: #1b1b1b; background: #fff; }
+  h1 { font-size: 16px; margin: 0 0 6px; }
+  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: #666; margin: 14px 0 4px; }
+  ul { margin: 0; padding-left: 16px; }
+  .mono { font-family: ui-monospace, Menlo, Consolas, monospace; word-break: break-all; }
+  .muted { color: #666; }
+  button { font: inherit; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <h1>Bouncer</h1>
+  <div class="muted">Locks sign-in boxes on pages that pretend to be one of these brands on the wrong domain. Nothing leaves your browser.</div>
+  <h2>Brands on the list</h2>
+  <ul id="brands"></ul>
+  <h2>Pages you unlocked by hand</h2>
+  <ul id="log"><li class="muted">None.</li></ul>
+  <button id="clear" hidden>Clear this list</button>
+  <script src="src/brands.js"></script>
+  <script src="src/popup.js"></script>
+</body>
+</html>

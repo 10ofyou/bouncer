@@ -1,0 +1,14 @@
+{
+  "name": "bouncer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome extension that locks sign-in boxes on fake brand login pages.",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "e2e": "node test/e2e.mjs",
+    "build": "python3 scripts/build_zip.py"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

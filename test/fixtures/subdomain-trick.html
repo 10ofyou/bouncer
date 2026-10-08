@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gmail</title>
+</head>
+<body>
+<!-- Test fixture: served from accounts.google.com.evil.test, where the real
+     host name is only a prefix of an attacker's domain. -->
+<h1>Sign in</h1>
+<p>to continue to Gmail</p>
+<form method="POST" action="/collect">
+  <input type="email" id="identifierId" name="identifier" placeholder="Email or phone">
+  <input type="password" name="Passwd" placeholder="Enter your password">
+  <button type="submit" id="next">Next</button>
+</form>
+</body>
+</html>

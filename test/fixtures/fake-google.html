@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sign in - Google Accounts</title>
+<link rel="icon" href="/static/favicon-google.ico">
+<style>
+  body { font-family: Roboto, Arial, sans-serif; background: #f0f4f9; margin: 0; }
+  .card { max-width: 450px; margin: 80px auto; background: #fff; border-radius: 28px; padding: 36px; }
+  input { width: 100%; padding: 14px; font-size: 16px; box-sizing: border-box; margin: 12px 0; }
+  button { background: #0b57d0; color: #fff; border: 0; border-radius: 20px; padding: 10px 24px; }
+</style>
+</head>
+<body>
+<!-- Test fixture: imitates the sendhighgraph.com kit. The form is injected
+     after load, the way many phishing kits render it. -->
+<div class="card" id="card">
+  <svg aria-label="Google" width="75" height="24" viewBox="0 0 75 24"><title>Google</title><rect width="75" height="24" fill="#4285f4"/></svg>
+  <h1>Sign in</h1>
+  <p>Use your Google Account</p>
+  <p>to continue to Google Voice</p>
+</div>
+<script>
+  setTimeout(() => {
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '/collect';
+    form.innerHTML = '<input type="email" id="identifierId" name="identifier" placeholder="Email or phone">' +
+      '<input type="password" name="Passwd" placeholder="Enter your password">' +
+      '<button type="submit" id="next">Next</button>';
+    form.addEventListener('submit', () => { window.kitSawSubmit = true; });
+    document.getElementById('card').append(form);
+    window.formReady = true;
+  }, 700);
+</script>
+</body>
+</html>
