@@ -12,6 +12,7 @@ Layout produced, which is what the canonical URLs depend on:
     /bouncer/styles.css the simulations' stylesheet   (referenced as ../styles.css)
     /bouncer/training.js the simulations' script       (referenced as ../training.js)
     /dist/bouncer.zip   the download the simulations link to (../../dist/bouncer.zip)
+    /                   the landing page that lists the above
 
 The _redirects rules for /bouncer and /bouncer/ are exact matches, so they do
 not shadow /bouncer/<brand>.
@@ -37,7 +38,7 @@ def main() -> int:
     (out / "bouncer").mkdir(parents=True)
 
     # The guide plus the routing and header rules.
-    for name in ("bouncer.md", "_redirects", "_headers"):
+    for name in ("bouncer.md", "_redirects", "_headers", "index.html"):
         shutil.copy2(SITE / name, out / name)
 
     # One directory per brand, so /bouncer/<brand> resolves to its index.html.
