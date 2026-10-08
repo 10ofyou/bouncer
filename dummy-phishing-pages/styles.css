@@ -212,3 +212,34 @@ body.sim-google .g-footer a:hover { text-decoration: underline; }
 @media (max-width: 480px) {
   body.sim-google .g-card { border: 0; padding: 24px; margin: 0 auto; }
 }
+
+/* --- lesson step two: the two ways to get Bouncer --- */
+.choice {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #d8dee9;
+  border-radius: 10px;
+  background: #fbfcfe;
+}
+.choice strong { display: block; margin-bottom: .25rem; font-size: 1rem; }
+.choice p { margin: 0 0 .75rem; font-size: .9rem; }
+.prompt-box {
+  margin: 0 0 .75rem;
+  padding: .75rem;
+  max-height: 9rem;
+  overflow: auto;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #e2e8f0;
+  font: 500 .78rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.copy-status { display: inline-block; margin-left: .6rem; font-size: .85rem; color: #475569; }
+.copy-status.ok { color: #15803d; font-weight: 600; }
+.guide-link { font-weight: 600; }
+.lesson [tabindex="-1"]:focus { outline: 3px solid var(--brand, #1558a6); outline-offset: 4px; }
+.lesson-actions button:focus-visible,
+.lesson-actions a:focus-visible,
+.choice a:focus-visible,
+.choice button:focus-visible { outline: 3px solid var(--brand, #1558a6); outline-offset: 2px; }
