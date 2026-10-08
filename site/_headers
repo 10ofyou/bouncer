@@ -1,0 +1,9 @@
+/bouncer
+  Content-Type: text/markdown; charset=utf-8
+  X-Content-Type-Options: nosniff
+/bouncer/
+  Content-Type: text/markdown; charset=utf-8
+  X-Content-Type-Options: nosniff
+/bouncer.md
+  Content-Type: text/markdown; charset=utf-8
+  X-Content-Type-Options: nosniff
