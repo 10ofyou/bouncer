@@ -3,3 +3,6 @@ test-results/
 *.log
 .DS_Store
 /tmp/
+
+# Assembled deploy output
+_site/
