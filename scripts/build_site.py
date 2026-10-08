@@ -9,6 +9,7 @@ Layout produced, which is what the canonical URLs depend on:
 
     /bouncer            the install and safety guide (site/bouncer.md via _redirects)
     /bouncer/<brand>    a phishing simulation, one per brand
+    /bouncer/simulations  the index that lists all six
     /bouncer/styles.css the simulations' stylesheet   (referenced as ../styles.css)
     /bouncer/training.js the simulations' script       (referenced as ../training.js)
     /dist/bouncer.zip   the download the simulations link to (../../dist/bouncer.zip)
@@ -49,6 +50,12 @@ def main() -> int:
         dest = out / "bouncer" / brand
         dest.mkdir()
         shutil.copy2(src, dest / "index.html")
+
+    # The all-simulations index, served at /bouncer/simulations. Its links are
+    # written relative to that location, which is why they point at ../<brand>/.
+    sim_index = out / "bouncer" / "simulations"
+    sim_index.mkdir()
+    shutil.copy2(SIMS / "index.html", sim_index / "index.html")
 
     # Shared assets, referenced from each simulation as ../
     for asset in ("styles.css", "training.js"):
