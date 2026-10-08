@@ -134,3 +134,81 @@ dialog::backdrop { background: rgba(8, 20, 41, .62); backdrop-filter: blur(4px);
   .brand-grid { grid-template-columns: 1fr; }
 }
 
+
+/* ---------------------------------------------------------------------------
+   Google simulation: a closer match to the real sign-in page.
+   Scoped to body.sim-google so the other five simulations are untouched.
+   No webfonts are loaded. These pages make no network requests at all, and
+   that property is easier to keep true than to re-prove later.
+   --------------------------------------------------------------------------- */
+body.sim-google {
+  background: #fff;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #202124;
+}
+body.sim-google .shell { max-width: none; padding: 0; }
+body.sim-google .g-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 448px;
+  margin: 24px auto;
+  padding: 48px 40px 36px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  background: #fff;
+}
+body.sim-google .g-logo {
+  display: flex; justify-content: center; margin-bottom: 16px;
+  font-size: 26px; font-weight: 500; letter-spacing: -1px; user-select: none;
+}
+body.sim-google .g-logo span:nth-child(1) { color: #4285f4; }
+body.sim-google .g-logo span:nth-child(2) { color: #ea4335; }
+body.sim-google .g-logo span:nth-child(3) { color: #fbbc05; }
+body.sim-google .g-logo span:nth-child(4) { color: #4285f4; }
+body.sim-google .g-logo span:nth-child(5) { color: #34a853; }
+body.sim-google .g-logo span:nth-child(6) { color: #ea4335; }
+body.sim-google h1 {
+  font-size: 24px; font-weight: 400; line-height: 1.33;
+  text-align: center; margin: 0 0 8px; color: #202124; letter-spacing: 0;
+}
+body.sim-google .g-sub { font-size: 16px; text-align: center; margin: 0 0 32px; color: #202124; }
+body.sim-google .g-field { position: relative; margin-bottom: 24px; }
+body.sim-google .g-field input {
+  box-sizing: border-box; width: 100%; height: 56px; padding: 13px 15px;
+  font-size: 16px; color: #202124; background: #fff;
+  border: 1px solid #dadce0; border-radius: 4px; outline: none;
+}
+body.sim-google .g-field input:focus { border: 2px solid #1a73e8; padding: 12px 14px; }
+body.sim-google .g-field label {
+  position: absolute; left: 8px; top: -8px; padding: 0 8px;
+  font-size: 12px; color: #5f6368; background: #fff; pointer-events: none;
+}
+body.sim-google .g-field input:focus + label { color: #1a73e8; }
+body.sim-google .g-link {
+  display: inline-block; font-size: 14px; font-weight: 500;
+  color: #1a73e8; text-decoration: none; padding: 8px; margin: -8px 0 0 -8px;
+  border-radius: 4px;
+}
+body.sim-google .g-link:hover { background: rgba(26,115,232,.04); }
+body.sim-google .g-guest { font-size: 14px; line-height: 1.5; margin: 24px 0 32px; color: #202124; }
+body.sim-google .g-actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+body.sim-google .g-actions .primary {
+  /* the shared .primary is full width; inside this row it must hug its label */
+  width: auto; flex: 0 0 auto;
+  min-width: 88px; height: 36px; min-height: 36px; margin: 0; padding: 0 24px;
+  font-size: 14px; font-weight: 500; line-height: 36px;
+  color: #fff; background: #1a73e8; border: 0; border-radius: 4px; cursor: pointer;
+  font-family: inherit;
+}
+body.sim-google .g-actions .g-link { white-space: nowrap; flex: 0 0 auto; }
+body.sim-google .g-actions .primary:hover { background: #1b66c9; box-shadow: 0 1px 2px rgba(60,64,67,.3); }
+body.sim-google .g-footer {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  max-width: 448px; margin: 0 auto 32px; padding: 0 4px; font-size: 12px; color: #5f6368;
+}
+body.sim-google .g-footer nav { display: flex; gap: 24px; }
+body.sim-google .g-footer a { color: #5f6368; text-decoration: none; }
+body.sim-google .g-footer a:hover { text-decoration: underline; }
+@media (max-width: 480px) {
+  body.sim-google .g-card { border: 0; padding: 24px; margin: 0 auto; }
+}
